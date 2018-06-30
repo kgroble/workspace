@@ -9,7 +9,15 @@ API_KEY = "219ffcb983971535d4f256fe36d67dc5"
 UNITS = "Imperial"
 UNIT_KEY = "F"
 
-REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&APPID={}&units={}".format(CITY, API_KEY, UNITS))
+try:
+    REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&APPID={}&units={}".format(CITY, API_KEY, UNITS))
+except:
+    time.sleep(15)
+    try:
+        REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&APPID={}&units={}".format(CITY, API_KEY, UNITS))
+    except:
+        print("No Network")
+        exit(0)
 if REQ.status_code == 200:
     CURRENT = REQ.json()["weather"][0]["description"].capitalize()
     TEMP = int(float(REQ.json()["main"]["temp"]))

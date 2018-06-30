@@ -34,7 +34,7 @@ floating_modifier $mod
 
 # program launching
 bindsym $mod+Return exec termite
-bindsym $mod+Shift+Return exec emc
+bindsym $mod+Shift+Return exec emacsclient -c -a ""
 bindsym $mod+i exec firefox
 bindsym $mod+Shift+i exec firefox --private-window
 bindsym $mod+Shift+s exec spotify
