@@ -2,7 +2,7 @@
 
 # Specifying the icon(s) in the script
 # This allows us to change its appearance conditionally
-icon=""
+icon=" "
 
 player_status=$(playerctl status 2> /dev/null)
 if [[ $? -eq 0 ]]; then
@@ -11,9 +11,9 @@ fi
 
 # Foreground color formatting tags are optional
 if [[ $player_status = "Playing" ]]; then
-    echo "%{F#FFFFAF}$icon $metadata"       # Orange when playing
+    echo "%{F#65737E}$icon %{F#FFFFAF}$metadata"
 elif [[ $player_status = "Paused" ]]; then
-    echo "%{F#65737E}$icon $metadata"       # Greyed out info when paused
+    echo "%{F#65737E}$icon $metadata"
 else
-    echo "%{F#65737E}$icon"                 # Greyed out icon when stopped
+    echo ""
 fi

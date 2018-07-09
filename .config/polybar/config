@@ -19,7 +19,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/bar-1]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP1}
 ; monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -66,50 +66,6 @@ tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 tray-detached = true
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-[bar/bar-2]
-monitor = ${env:MONITOR:DP-2-1}
-width = 100%
-height = 27
-radius = 6.0
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:size=10;2
-font-1 = materialicons:size=12;2
-font-2 = unifont:size=10:2
-font-3 = "wuncon siji:pixelsize=10;2"
-font-4 = fontawesome:size=10;2
-
-modules-left = i3
-modules-center = date
-modules-right = weather music volume memory cpu battery
-; modules-right = music volume memory cpu battery
 
 [module/xwindow]
 type = internal/xwindow
@@ -223,7 +179,7 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = #f90000
@@ -231,7 +187,7 @@ label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 5
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = #4bffdc
@@ -414,7 +370,7 @@ margin-bottom = 5
 ; so center module stays true centered
 [module/spacer]
 type = custom/script
-interval = 1000000000000
+interval = 10000
 exec = ~/.config/polybar/empty.sh
 
 [module/weather]
@@ -429,7 +385,7 @@ exec = ~/.config/polybar/weather
 type = custom/script
 interval = 1
 
-format-prefix = " "
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-label = %output:0:60:...%
+label = %output:0:100:...%
 exec = ~/.config/polybar/mpris.sh
