@@ -59,13 +59,17 @@ font-6 = "Font Awesome 5 Brands:size=10;2"
 modules-left = i3
 modules-center = date
 ; modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = weather music volume memory cpu battery spacer
+modules-right = weather music volume memory cpu battery
 
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
-tray-detached = true
+tray-detached = false
+
+[bar/bar-2]
+inherit = bar/bar-1
+monitor = ${env:MONITOR:HDMI-1}
 
 [module/xwindow]
 type = internal/xwindow

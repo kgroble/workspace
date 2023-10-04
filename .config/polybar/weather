@@ -4,7 +4,9 @@
 import requests
 import time
 
-CITY = "5400075"
+# CITY = "5400075" # Sunnyvale
+# CITY = "5393015" # Santa Clara
+CITY = "4899170" # Lake Zurich
 API_KEY = "219ffcb983971535d4f256fe36d67dc5"
 UNITS = "Imperial"
 UNIT_KEY = "F"
